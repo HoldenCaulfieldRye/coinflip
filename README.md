@@ -5,12 +5,10 @@ Is it possible to construct a random experiment
 from flips of balanced coins, and to define a random variable over
 this experiment which follows the uniform distribution [1/3, 1/3, 1/3]?
 
-===
+
 
 Intuition
 =========
-
-It's not easy!
 
 A coin flip is a Bernoulli trial with parameter value 0.5.
 
@@ -24,7 +22,7 @@ So impossible to get exactly 1/3!
 But maybe you can get events whose probabilities approximate 1/3?
 i.e. which converge to 1/3, in the context of an infinite experiment?
 
-===
+
 
 A Solution
 ==========
@@ -49,7 +47,7 @@ converges to [1/3, 1/3, 1/3]
 (The experiment theoretically runs infinitely, you need to choose how
 many repetitions i.e. how many rounds to run)
 
-===
+
 
 Evaluation of Solution
 ======================
