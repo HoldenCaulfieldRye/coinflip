@@ -1,8 +1,14 @@
-Probability Problem: is it possible to construct a random experiment
+Probability Problem
+===================
+
+Is it possible to construct a random experiment
 from flips of balanced coins, and to define a random variable over
 this experiment which follows the uniform distribution [1/3, 1/3, 1/3]?
 
 ===
+
+Intuition
+=========
 
 It's not easy!
 
@@ -19,6 +25,9 @@ But maybe you can get events whose probabilities approximate 1/3?
 i.e. which converge to 1/3, in the context of an infinite experiment?
 
 ===
+
+A Solution
+==========
 
 This repo just has a little bit of code that runs the following
 experiment:
@@ -41,6 +50,9 @@ converges to [1/3, 1/3, 1/3]
 many repetitions i.e. how many rounds to run)
 
 ===
+
+Evaluation of Solution
+======================
 
 That is the experiment with the fastest convergence rate that I could
 come up with. 
