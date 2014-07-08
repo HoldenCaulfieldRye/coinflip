@@ -24,14 +24,38 @@ def experiment(count, pmf, rounds):
   return pmf/sum(pmf)
   
 
+def maisant_exp(rounds):
+  # both max_repeats and rounds need to go to infinity to obtain
+  # covnergence
+  pmf = np.array([0,0,0], dtype=float)
+  for i in range(rounds):
+    flip = [binomial(1,0.5), binomial(1,0.5)]
+    if flip == [1,1]: continue
+    elif flip == [1,0]: pmf[0] += 1
+    elif flip == [0,1]: pmf[1] += 1
+    elif flip == [0,0]: pmf[2] += 1
+    else:
+      print 'ERROR'
+      exit
+
+  return pmf/sum(pmf)
+        
+
 if __name__ == '__main__':
   sample =[]
-  rounds = int(raw_input("How many rounds per experiment? "))
   no_exps = int(raw_input("Run how many experiments? "))
+  rounds = int(raw_input("How many rounds per experiment? "))
+  which = int(raw_input("Whose experiment, 0: yours, 1: maisant? " ))
 
-  for i in range(no_exps):
-    sample.append(experiment(binomial(2,0.5), np.array([0.25,0.5,0.25]), rounds))
-    print sample[-1]
+  if which == 1:
+    for i in range(no_exps):
+      sample.append(maisant_exp(rounds))
+      print sample[-1]
+    
+  else:
+    for i in range(no_exps):
+      sample.append(experiment(binomial(2,0.5), np.array([0.25,0.5,0.25]), rounds))
+      print sample[-1]
 
   sample = np.array(sample)
   print "average distribution: %s"%(np.average(sample, axis=0))
